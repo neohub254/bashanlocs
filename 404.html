@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-KE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Bashan Locs & Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .error-content {
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--gradient-gold);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="glitter-overlay"></div>
+    
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                Oops! The page you're looking for seems to have wandered off into the boutique.
+                Don't worry, we have plenty of beautiful items for you to explore instead!
+            </p>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                Return to Homepage
+            </a>
+            
+            <div style="margin-top: 50px; color: var(--text-light);">
+                <p>Still need help? Contact us:</p>
+                <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+                    <a href="https://wa.me/254705902289" style="color: var(--gold); text-decoration: none;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:+254705902289" style="color: var(--gold); text-decoration: none;">
+                        <i class="fas fa-phone"></i> Call: 0705 902289
+                    </a>
+                    <a href="index.html#contact" style="color: var(--gold); text-decoration: none;">
+                        <i class="fas fa-map-marker-alt"></i> Visit Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

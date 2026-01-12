@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Bashan Locs & Fashion</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <h1>Bashan Admin</h1>
+                </div>
+                <p>Owner Dashboard</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Enter Dashboard
+                </button>
+                
+                <div class="forgot-link">
+                    <a href="#" id="forgotPassword">Forgot Password?</a>
+                </div>
+            </form>
+            
+            <form id="resetForm" class="login-form" style="display: none;">
+                <div class="form-group">
+                    <label>Security Question: What is your mother's maiden name?</label>
+                    <input type="text" id="securityAnswer" placeholder="Your answer" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" placeholder="New password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-key"></i> Reset Password
+                </button>
+                
+                <button type="button" id="backToLogin" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Login
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="admin-logo">
+                    <i class="fas fa-gem"></i>
+                    <h2>Bashan Admin</h2>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="admin-name">Owner</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-menu">
+                <a href="#" class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="products">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="add">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Product</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="stats">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Statistics</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="music">
+                    <i class="fas fa-music"></i>
+                    <span>Music Player</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="password">
+                    <i class="fas fa-lock"></i>
+                    <span>Password</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="music-mini">
+                    <div id="miniPlayer">
+                        <i class="fas fa-play"></i>
+                        <span>No song</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="top-actions">
+                    <div class="time-display" id="currentTime">Loading...</div>
+                    <button class="notify-btn" id="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notify-badge" id="notificationCount">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Sections -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <div id="dashboardSection" class="content-section active">
+                    <div class="welcome-card">
+                        <h2>Welcome Back! 👑</h2>
+                        <p>Manage your boutique effortlessly</p>
+                    </div>
+                    
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon sales">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalOrders">0</h3>
+                                <p>Today's Orders</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon products">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalProducts">0</h3>
+                                <p>Total Products</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon revenue">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalRevenue">Ksh 0</h3>
+                                <p>Revenue</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon visits">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalVisits">0</h3>
+                                <p>Website Visits</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn" data-section="add">
+                                <i class="fas fa-plus"></i>
+                                <span>Add New Product</span>
+                            </button>
+                            
+                            <button class="action-btn" data-section="products">
+                                <i class="fas fa-edit"></i>
+                                <span>Manage Products</span>
+                            </button>
+                            
+                            <button class="action-btn" onclick="window.open('index.html', '_blank')">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Website</span>
+                            </button>
+                            
+                            <button class="action-btn" data-section="music">
+                                <i class="fas fa-headphones"></i>
+                                <span>Play Music</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Section -->
+                <div id="productsSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Manage Products</h2>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="productSearch" placeholder="Search products...">
+                        </div>
+                    </div>
+                    
+                    <div class="products-list" id="productsList">
+                        <!-- Products will be loaded here -->
+                        <div class="empty-state">
+                            <i class="fas fa-box-open"></i>
+                            <h3>No Products Yet</h3>
+                            <p>Add your first product to get started</p>
+                            <button class="action-btn" data-section="add">
+                                <i class="fas fa-plus"></i>
+                                Add First Product
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Product Section -->
+                <div id="addSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Add New Product</h2>
+                        <p>Fill in the details below</p>
+                    </div>
+                    
+                    <form id="addProductForm" class="product-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select id="productCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="fashion">Fashion</option>
+                                    <option value="shoes">Shoes</option>
+                                    <option value="bags">Bags</option>
+                                    <option value="jewelry">Jewelry</option>
+                                    <option value="perfumes">Perfumes</option>
+                                    <option value="oils">Oils & Lotions</option>
+                                    <option value="hair">Hair & Extensions</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Price (Ksh)</label>
+                                <input type="number" id="productPrice" placeholder="e.g., 2500" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" id="productName" placeholder="e.g., Designer Handbag" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Product Image</label>
+                            <div class="image-upload">
+                                <div class="upload-area" id="uploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Click to upload image</p>
+                                    <input type="file" id="productImage" accept="image/*" style="display: none;">
+                                </div>
+                                <div class="image-preview" id="imagePreview">
+                                    <!-- Preview will appear here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Description (Optional)</label>
+                            <textarea id="productDescription" rows="3" placeholder="Describe your product..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-check"></i> Publish Product
+                            </button>
+                            <button type="button" class="cancel-btn" data-section="products">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Statistics Section -->
+                <div id="statsSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Statistics & Analytics</h2>
+                        <p>Track your boutique performance</p>
+                    </div>
+                    
+                    <div class="analytics-cards">
+                        <div class="analytics-card">
+                            <h3><i class="fas fa-mouse-pointer"></i> Clicks & Orders</h3>
+                            <div class="analytics-item">
+                                <span>WhatsApp Clicks:</span>
+                                <strong id="whatsappClicks">0</strong>
+                            </div>
+                            <div class="analytics-item">
+                                <span>SMS Clicks:</span>
+                                <strong id="smsClicks">0</strong>
+                            </div>
+                            <div class="analytics-item">
+                                <span>Call Clicks:</span>
+                                <strong id="callClicks">0</strong>
+                            </div>
+                            <div class="analytics-item total">
+                                <span>Total Orders Today:</span>
+                                <strong id="todayOrders">0</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3><i class="fas fa-chart-line"></i> Visitor Stats</h3>
+                            <div class="analytics-item">
+                                <span>Today's Visitors:</span>
+                                <strong id="todayVisitors">0</strong>
+                            </div>
+                            <div class="analytics-item">
+                                <span>This Week:</span>
+                                <strong id="weekVisitors">0</strong>
+                            </div>
+                            <div class="analytics-item">
+                                <span>This Month:</span>
+                                <strong id="monthVisitors">0</strong>
+                            </div>
+                            <div class="analytics-item">
+                                <span>Total Visitors:</span>
+                                <strong id="totalVisitorsCount">0</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3><i class="fas fa-star"></i> Popular Products</h3>
+                            <div id="popularProducts">
+                                <!-- Popular products will be listed here -->
+                                <p class="no-data">No data yet</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reset-stats">
+                        <button class="reset-btn" id="resetStats">
+                            <i class="fas fa-redo"></i> Reset All Statistics
+                        </button>
+                        <p class="note">This will reset all click counters and visitor counts</p>
+                    </div>
+                </div>
+
+                <!-- Music Player Section -->
+                <div id="musicSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Music Player</h2>
+                        <p>Upload and play your favorite songs</p>
+                    </div>
+                    
+                    <div class="music-player">
+                        <div class="player-controls">
+                            <div class="now-playing" id="nowPlaying">
+                                <i class="fas fa-music"></i>
+                                <div>
+                                    <h3 id="currentSong">No song playing</h3>
+                                    <p id="songArtist">Upload a song to begin</p>
+                                </div>
+                            </div>
+                            
+                            <div class="player-buttons">
+                                <button class="player-btn" id="prevBtn" disabled>
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button class="player-btn play-btn" id="playBtn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="player-btn" id="nextBtn" disabled>
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up"></i>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="50">
+                            </div>
+                        </div>
+                        
+                        <div class="song-list">
+                            <div class="song-list-header">
+                                <h3>Your Songs</h3>
+                                <button class="upload-song-btn" id="uploadSongBtn">
+                                    <i class="fas fa-upload"></i> Upload Song
+                                </button>
+                            </div>
+                            <div class="songs-container" id="songsContainer">
+                                <!-- Songs will be listed here -->
+                                <div class="empty-songs">
+                                    <i class="fas fa-music"></i>
+                                    <p>No songs uploaded yet</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-song" id="uploadSongSection" style="display: none;">
+                            <h3>Upload New Song</h3>
+                            <div class="upload-form">
+                                <input type="file" id="songFile" accept="audio/*" style="display: none;">
+                                <div class="upload-area song-upload" id="songUploadArea">
+                                    <i class="fas fa-file-audio"></i>
+                                    <p>Click to upload song (MP3, WAV, etc.)</p>
+                                    <span>Max size: 10MB</span>
+                                </div>
+                                <div class="song-details">
+                                    <input type="text" id="songTitle" placeholder="Song title" required>
+                                    <input type="text" id="songArtistInput" placeholder="Artist name" required>
+                                </div>
+                                <div class="upload-actions">
+                                    <button type="button" id="saveSongBtn" class="save-btn">
+                                        <i class="fas fa-save"></i> Save Song
+                                    </button>
+                                    <button type="button" id="cancelUploadBtn" class="cancel-btn">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password Section -->
+                <div id="passwordSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Change Password</h2>
+                        <p>Update your admin password</p>
+                    </div>
+                    
+                    <form id="changePasswordForm" class="password-form">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" id="newPasswordField" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" id="confirmNewPassword" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-lock"></i> Update Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Player -->
+    <audio id="audioPlayer" style="display: none;"></audio>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Operation successful!</span>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

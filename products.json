@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Designer Leather Handbag",
+        "price": 4500,
+        "category": "bags",
+        "description": "Premium leather handbag with gold accents",
+        "image": "assets/products/handbag.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Gold Plated Necklace",
+        "price": 1200,
+        "category": "jewelry",
+        "description": "Elegant gold-plated necklace with pendant",
+        "image": "assets/products/necklace.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Women's Designer Sandals",
+        "price": 1800,
+        "category": "shoes",
+        "description": "Comfortable stylish sandals for all occasions",
+        "image": "assets/products/sandals.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Evening Gown Dress",
+        "price": 3500,
+        "category": "fashion",
+        "description": "Elegant evening gown for special occasions",
+        "image": "assets/products/dress.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Premium Perfume",
+        "price": 2500,
+        "category": "perfumes",
+        "description": "Long-lasting luxury fragrance",
+        "image": "assets/products/perfume.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Hair Extension Set",
+        "price": 3000,
+        "category": "hair",
+        "description": "Natural looking hair extensions",
+        "image": "assets/products/hair.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Bleaching Oil",
+        "price": 800,
+        "category": "oils",
+        "description": "Skin brightening and evening oil",
+        "image": "assets/products/oil.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Leather Strap Watch",
+        "price": 2200,
+        "category": "jewelry",
+        "description": "Classic leather watch with gold details",
+        "image": "assets/products/watch.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Designer Clutch Bag",
+        "price": 2800,
+        "category": "bags",
+        "description": "Evening clutch with rhinestone details",
+        "image": "assets/products/clutch.jpg"
+    },
+    {
+        "id": 10,
+        "name": "High Heel Shoes",
+        "price": 3200,
+        "category": "shoes",
+        "description": "Elegant high heels for parties",
+        "image": "assets/products/heels.jpg"
+    },
+    {
+        "id": 11,
+        "name": "African Print Dress",
+        "price": 2900,
+        "category": "fashion",
+        "description": "Beautiful African print Ankara dress",
+        "image": "assets/products/ankara.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Body Lotion Set",
+        "price": 1500,
+        "category": "oils",
+        "description": "Moisturizing body lotion collection",
+        "image": "assets/products/lotion.jpg"
+    }
+]

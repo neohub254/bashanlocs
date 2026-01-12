@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Home Page - Highest Priority -->
+    <url>
+        <loc>https://bashanlocs.com/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Salon Services -->
+    <url>
+        <loc>https://bashanlocs.com/#salon</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Shop Categories -->
+    <url>
+        <loc>https://bashanlocs.com/#shop</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Fashion Collection -->
+    <url>
+        <loc>https://bashanlocs.com/#fashion</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Footwear Collection -->
+    <url>
+        <loc>https://bashanlocs.com/#shoes</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Bags Collection -->
+    <url>
+        <loc>https://bashanlocs.com/#bags</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Jewelry Collection -->
+    <url>
+        <loc>https://bashanlocs.com/#jewelry</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Perfumes Collection -->
+    <url>
+        <loc>https://bashanlocs.com/#perfumes</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Beauty Products -->
+    <url>
+        <loc>https://bashanlocs.com/#oils</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Hair Collection -->
+    <url>
+        <loc>https://bashanlocs.com/#hair</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://bashanlocs.com/#contact</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>
